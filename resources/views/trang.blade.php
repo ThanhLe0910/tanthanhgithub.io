@@ -18,17 +18,20 @@
 <body>
     <div class="abc">
         <div class="circle">
-            <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-cute-girl-avatar-material-png-image_4023832.jpg"
+            <img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.0-9/123813056_2749225105350369_2122078788760115831_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=4sd82u15y5IAX9t1TZ2&_nc_ht=scontent.fsgn5-5.fna&oh=72ad609ec5d3907c9df118224fd31b5f&oe=6077729A"
                 width="175px">
         </div>
         <div class="textname">
             <h3 class="text-center mt-3" style="word-spacing: 5px;">Nguyễn Thị Trang</h3>
         </div>
+        <div class="company text-center">
+        <i class="fa fa-home" aria-hidden="true"> CÔNG TY TNHH KHÔNG GIAN VIỆT NAM</i>
+        </div>
         <div class="description text-center">
-            <i>Sự miêu tả</i>
+            <i>Nhân viên-Địa chính</i>
         </div>
         <div class="text-center">
-            <i class="fa fa-envelope"> nguyenthitrang0415@gmail.com</i>
+            <i class="fa fa-envelope"> vnstrangnguyen@gmail.com</i>
         </div>
         <div class="text-center">
             <i class="fa fa-phone" aria-hidden="true"> 0383820415</i>
