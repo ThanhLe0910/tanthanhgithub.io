@@ -1,0 +1,17 @@
+.circle {
+    background: #456BD9;
+    clip-path: circle(50%);
+    height: 10em;
+    width: 10em;
+    margin: 20px auto;
+  }
+  body{
+    background-image: url(https://anhdepfree.com/wp-content/uploads/2020/03/hinh-nen-iphone-11-dep-nhat.jpg);
+    background-color: #cccccc;
+    height: 790px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+  }
