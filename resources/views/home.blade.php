@@ -25,7 +25,7 @@
             <h3 class="text-center mt-3" style="word-spacing: 5px;">Lê Tấn Thành</h3>
         </div>
         <div class="company text-center">
-        <i class="fa fa-home" aria-hidden="true"> CÔNG TY Zuno</i>
+        <i class="fa fa-home" aria-hidden="true"> CÔNG TY ZUNO</i>
         </div>
         <div class="description text-center">
             <i>Lập Trình Viên</i>
