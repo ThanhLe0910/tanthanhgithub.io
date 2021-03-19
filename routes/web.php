@@ -19,3 +19,15 @@ Route::get('/', function () {
 Route::get('/nguyen-thi-trang', function () {
     return view('trang');
 });
+
+Route::prefix('/admin')->group(function(){
+    Route::get('/dashboard','App\Http\Controllers\Admin\v1\Dashboard\DashboardController@indexAction')->name('Dashboard');
+
+    Route::get('/user','App\Http\Controllers\Admin\v1\User\UserController@indexAction')->name('User');
+    Route::get('/form-update-user/{id}','App\Http\Controllers\Admin\v1\User\FormUpdateUserController@indexAction')->name('FormUpdateUser');
+    
+    Route::post('/update-user','App\Http\Controllers\Admin\v1\User\UpdateUserController@indexAction')->name('UpdateUser');
+});
+
+Route::prefix('/admin-user')->group(function(){
+});
