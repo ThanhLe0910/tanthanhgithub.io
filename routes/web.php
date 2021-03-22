@@ -27,7 +27,12 @@ Route::prefix('/admin')->group(function(){
     Route::get('/form-update-user/{id}','App\Http\Controllers\Admin\v1\User\FormUpdateUserController@indexAction')->name('FormUpdateUser');
     
     Route::post('/update-user','App\Http\Controllers\Admin\v1\User\UpdateUserController@indexAction')->name('UpdateUser');
+
+    Route::post('/upload-image','App\Http\Controllers\Admin\v1\Upload\UploadImageController@indexAction')->name('UploadImage');
+
+    Route::post('/upload-image/scancode','App\Http\Controllers\Admin\v1\Upload\UploadImageScancodeController@indexAction')->name('UploadImageScancodeController');
 });
+
 
 Route::prefix('/admin-user')->group(function(){
 });

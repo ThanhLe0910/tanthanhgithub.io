@@ -6,6 +6,7 @@
         <div class="uk-container uk-card uk-card-default uk-card-body">
             <ul class="uk-breadcrumb" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
                 <li><a href="#">Form update user</a></li>
+                <h2 style="color:red">Nhớ chọn hình ảnh lại</h2>
             </ul>
             <div class="card-body">
                 @if ($errors->any())
@@ -50,15 +51,45 @@
                         <div class="col-sm-10"><input type="text" name="phone" class="form-control"
                                 value="{{$user->phone}}" /></div>
                     </div>
-                    <div class="row mt-4">
+                    <!-- <div class="row mt-4">
                         <div class="col-sm-2"> Avatar<span class="text-danger"> *</span></div>
                         <div class="col-sm-10"><input type="text" name="avatar" class="form-control"
                                 value="{{$user->avatar}}" /></div>
+                    </div> -->
+                    <div class="row mt-4">
+                        <div class="col-sm-2"> Avatar<span class="text-danger"> *</span></div>
+                        <div class="col-sm-10">
+                            <div class="image-upload-one" style="margin-top: 15px;">
+                                <div class="center">
+                                    <div class="form-input">
+
+                                        <img width="150px" id="thumbnailReview" src="<?php echo $user->avatar !== '' ? "
+                                            http://localhost:8000/uploads/images/store/" . $user->avatar :
+                                        '/image/4.jpg'; ?>" onclick="document.getElementById('file-ip-1').click()">
+                                        <input style="display: none;" type="file" name="avatar" id="file-ip-1"
+                                            accept="image/*" onchange="showPreviewOne(event);">
+                                        <input type="hidden" name="thumbnail_url" id="thumbnail_url" />
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-sm-2"> Scancode<span class="text-danger"> *</span></div>
-                        <div class="col-sm-10"><input type="text" name="scancode" class="form-control"
-                                value="{{$user->scancode}}" /></div>
+                        <div class="col-sm-10">
+                            <div class="row mt-4">
+                            <img id="output_image" height=50px width=150px onclick="document.getElementById('file-ip-2').click()"
+                                    src="<?php echo $user->scancode !== '' ? "
+                                    http://localhost:8000/uploads/images/store/" . $user->scancode : '/image/4.jpg';
+                                ?>"/>
+
+                                <input style="display: none;" name="scancode" type="file" accept="image/*" onchange="preview_image(event)"
+                                    id="file-ip-2">
+                                
+                                <input type="hidden" name="thumbnail_urlScancode" id="thumbnail_urlScancode" />
+                            </div>
+                        </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-sm-2"> Url_fb<span class="text-danger"> *</span></div>
@@ -111,4 +142,66 @@
         </div>
     </div>
 </div>
+
+<script>
+    function preview_image(event) {
+        if (event.target.files.length > 0) {
+
+            let src = URL.createObjectURL(event.target.files[0]);
+
+            let preview = document.getElementById("output_image");
+
+            preview.src = src;
+
+            preview.style.display = "block";
+
+            let form = new FormData();
+            form.append('scancode', event.target.files[0]);
+            $.ajax({
+                url: "/admin/upload-image/scancode",
+                type: "POST",
+                data: form,
+                processData: false,
+                contentType: false,
+                success: function (resp) {
+                    $("#thumbnail_urlScancode").val(resp.fileUrl);
+                    console.log(resp);
+                },
+                error: function (err) {
+                }
+            })
+        }
+    }
+</script>
+<script>
+    function showPreviewOne(event) {
+
+        if (event.target.files.length > 0) {
+
+            let src = URL.createObjectURL(event.target.files[0]);
+
+            let preview = document.getElementById("thumbnailReview");
+
+            preview.src = src;
+
+            preview.style.display = "block";
+
+            let form = new FormData();
+            form.append('avatar', event.target.files[0]);
+            $.ajax({
+                url: "/admin/upload-image",
+                type: "POST",
+                data: form,
+                processData: false,
+                contentType: false,
+                success: function (resp) {
+                    $("#thumbnail_url").val(resp.fileUrl);
+                    console.log(resp);
+                },
+                error: function (err) {
+                }
+            })
+        }
+    }
+</script>
 @endsection
