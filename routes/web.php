@@ -25,11 +25,22 @@ Route::prefix('/admin')->group(function(){
 
     Route::get('/user','App\Http\Controllers\Admin\v1\User\UserController@indexAction')->name('User');
     Route::get('/form-update-user/{id}','App\Http\Controllers\Admin\v1\User\FormUpdateUserController@indexAction')->name('FormUpdateUser');
-    
+    /**
+     * form create
+     */
+    Route::get('/create-user','App\Http\Controllers\Admin\v1\User\FormCreateUserController@indexAction')->name('FormCreateUser');
+    Route::post('/api-create-user','App\Http\Controllers\Admin\v1\User\CreateUserController@indexAction')->name('CreateUser');
+    /**
+     * API update user
+     */
     Route::post('/update-user','App\Http\Controllers\Admin\v1\User\UpdateUserController@indexAction')->name('UpdateUser');
-
+    /**
+     * API update upload-image
+     */
     Route::post('/upload-image','App\Http\Controllers\Admin\v1\Upload\UploadImageController@indexAction')->name('UploadImage');
-
+    /**
+     * API update upload-scancode
+     */
     Route::post('/upload-image/scancode','App\Http\Controllers\Admin\v1\Upload\UploadImageScancodeController@indexAction')->name('UploadImageScancodeController');
 });
 

@@ -22,7 +22,7 @@
                                 <div uk-navbar>
 
                                     <ul class="uk-navbar-nav">
-                                        <li class="uk-active"><a href="/admin-user/dashboard"><div class="uk-icon-home" uk-icon="home"></div> <div> Smart Card</div></a></li>
+                                        <li class="uk-active"><a href="/admin/dashboard"><div class="uk-icon-home" uk-icon="home"></div> <div> Smart Card</div></a></li>
                                         <li>
                                             <a href="#"><div class="uk-icon-grid" uk-icon="grid"></div> <div> My menu</div></a>
                                             <div class="uk-navbar-dropdown">
@@ -33,7 +33,7 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li><a href="/admin-user/user"><div class="uk-icon-pencil" uk-icon="pencil"></div> <div> User</div></a></li>
+                                        <li><a href="/admin/user"><div class="uk-icon-pencil" uk-icon="pencil"></div> <div> User</div></a></li>
                                     </ul>
                                 </div>
                             </div>

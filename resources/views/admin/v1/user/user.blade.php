@@ -7,6 +7,7 @@
             <ul class="uk-breadcrumb" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
                 <li><a href="#">User</a></li>
             </ul>
+            <a href="{{asset('admin/create-user')}}" type="button" class="btn btn-success ml-3" href="">Create</a>
             <div class="card-body">
                 <table id="myTable" class="table table-bordered">
                     <thead>
