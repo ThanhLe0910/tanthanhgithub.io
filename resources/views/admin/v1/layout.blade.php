@@ -29,7 +29,7 @@
                                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                                     <li><a href="#">Change password</a></li>
                                                     <li><a href="#">Account setting</a></li>
-                                                    <li><a href="#">Logout</a></li>
+                                                    <li><a href="{{route('Logout')}}">Logout</a></li>
                                                 </ul>
                                             </div>
                                         </li>

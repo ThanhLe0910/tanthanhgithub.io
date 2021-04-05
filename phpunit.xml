@@ -27,5 +27,9 @@
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
         <server name="TELESCOPE_ENABLED" value="false"/>
+        <env name="IMAP_SERVER_NAME" value="imap.gmail.com" />
+        <env name="IMAP_SERVER_PORT" value="60993" />
+        <env name="IMAP_USERNAME" value="contact.zunocms.2021@gmail.com" />
+        <env name="IMAP_PASSWORD" value="zunocms.2021@gmail.com" />
     </php>
 </phpunit>
