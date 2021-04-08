@@ -40,7 +40,6 @@ class UpdateUserController extends Controller
                     'url_sky' =>$request->get('url_sky') ? $request->get('url_sky') :'',
                     'image_background' => $request->get('image_background ')? $request->get('image_background') :'',
                     'status' => $request->get('status'),
-                    // 'created_at' => date('Y-m-d H:i:s',time()),
                     'updated_at' =>date('Y-m-d H:i:s',time()),
                 ));
                 if($update) {

@@ -22,7 +22,7 @@
                     <tbody>
                         @foreach($User as $item)
                         <tr>
-                            <td class="text-center">{{$item->name}}</td>
+                            <td class="text-center"><a href="{{asset('admin/get-user/'.$item->id)}}">{{$item->name}}</a></td>
                             <td>{{$item->email}}</td>
                             <td>{{$item->phone}}</td>
                             <td>{{$item->company}}</td>

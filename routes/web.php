@@ -50,6 +50,10 @@ Route::prefix('/admin')->group(function(){
          * Logout
          */
         Route::get('/log-out','App\Http\Controllers\Admin\v1\LogoutController@logout')->name('Logout');
+        /**
+         *  Get view user
+         */
+        Route::get('/get-user/{id}','App\Http\Controllers\Admin\v1\User\FormGetUserController@indexAction')->name('FormGetUser');
     });
 });
 
@@ -66,4 +70,8 @@ Route::prefix('/ajax')->group(function(){
         Route::post('/login-action','App\Http\Controllers\Admin\v1\Ajax\UserLoginController@indexAction')->name('LoginAction');
         Route::post('/forgot-password-action','App\Http\Controllers\Admin\v1\Ajax\UserForgotPasswordActionController@indexAction')->name('ForgotPasswordAction');
         Route::post('/reset-password-action','App\Http\Controllers\Admin\v1\Ajax\UserForgotPasswordActionController@actionReset')->name('ResetPasswordAction');
+        /**
+         * Comment
+         */
+        Route::post('/create-send-mess/{id}','App\Http\Controllers\Admin\v1\Comment\CreatedSendMessController@indexAction')->name('CreatedSendMess');
 });
