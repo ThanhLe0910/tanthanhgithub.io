@@ -42,14 +42,14 @@
                     <div class="input-group-prepend">
 							<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 						</div>
-						<input name="code" id="code" class="form-control" placeholder="Code" type="code">
+						<input name="code" id="code" class="form-control" placeholder="Code" type="password">
 					</div> 
 					<div class="inline-block">
                 		<p class="text-danger" id="reset_message_code"></p>
             		</div><!-- form-group// -->
 					<div class="form-group">
 					<button type="submit" class="btn btn-primary btn-block"
-                        onclick="adminUserResetPassword();">Register</button>
+                        onclick="adminUserResetPassword();">Confirm</button>
 					</div> <!-- form-group// -->
 					<p class="text-center">Have an account? <a href="{{ route('Login')}}">Log In</a> </p>
 				<!-- </form> -->

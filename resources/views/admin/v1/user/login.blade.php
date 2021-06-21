@@ -27,7 +27,7 @@
 			<article class="card-body" style="padding: 0px 270px;">
 				<h4 class="card-title mt-3 text-center">Register Account</h4>
 				<p>
-					<a style="background-color: #42AEEC;color: #fff;" href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+					<a style="background-color: #42AEEC;color: #fff;" href="{{ route('RedirectToGoogle')}}" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login Google</a>
 					<a style="background-color: #405D9D;color: #fff;" href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via
 						facebook</a>
 				</p>

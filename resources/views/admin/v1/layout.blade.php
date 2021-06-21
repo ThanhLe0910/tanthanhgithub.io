@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Smart Card </title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta id="user" content="{{route('User')}}"/>
     <link rel="stylesheet" type="text/css" href="/uikit-3.6.16/css/uikit-rtl.min.css"/>
     <link rel="stylesheet" type="text/css" href="/uikit-3.6.16/css/uikit.min.css"/>
     <link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"></head>
 
 <body>
 <div class="zuno-cms wraper-header">
@@ -34,6 +36,7 @@
                                             </div>
                                         </li>
                                         <li><a href="/admin/user"><div class="uk-icon-pencil" uk-icon="pencil"></div> <div> User</div></a></li>
+                                        <li><a href="/admin/get-city"><div class="uk-icon-pencil" uk-icon="pencil"></div> <div> Address</div></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -46,9 +49,9 @@
         @yield('content')
         <!-- end main -->
         <footer>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/uikit-3.6.16/js/uikit.min.js"></script>
     <script src="/uikit-3.6.16/js/uikit-icons.min.js"></script>
@@ -57,6 +60,9 @@
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
     <script src="/DataTables/datatables.min.js"></script>
     <script src="/js/admin-user.sendmess.js"></script>
+    <script src="/js/admin-user.updatestatus.js"></script>
+
+
     @stack('scripts')
 </footer>
 </body>

@@ -8,6 +8,9 @@ class UserRegisterController extends Controller
 {
     public function indexAction()
     {
+        if(Auth::check()){
+            return redirect(route('Dashboard'));
+        }
         return view('admin.v1.user.register');
     }
 }

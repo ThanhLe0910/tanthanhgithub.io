@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,19 @@ Route::prefix('/admin')->group(function(){
          *  Get view user
          */
         Route::get('/get-user/{id}','App\Http\Controllers\Admin\v1\User\FormGetUserController@indexAction')->name('FormGetUser');
+        
+        /**
+         *  Get City 
+         */
+        Route::get('/get-city','App\Http\Controllers\Admin\v1\Address\GetAddressController@indexAction')->name('GetAddress');
+         /**
+         *  Get districts 
+         */
+        Route::get('/get-location','App\Http\Controllers\Admin\v1\Address\GetLocationController@indexAction')->name('ajax_get_data');
+        /**
+        *  API update status
+        */
+        Route::post('/update-status/{id}','App\Http\Controllers\Admin\v1\User\UpdateStatusController@indexAction')->name('UpdateStatus');
     });
 });
 
@@ -64,6 +78,10 @@ Route::prefix('/admin-user')->group(function(){
     Route::get('/forgot-password','App\Http\Controllers\Admin\v1\User\UserForgotPasswordController@indexAction')->name('ForgotPassword'); 
     Route::get('/reset-password','App\Http\Controllers\Admin\v1\User\UserResetPasswordController@indexAction')->name('ResetPassword'); 
 });
+// login google
+    Route::get('/google','App\Http\Controllers\Admin\v1\LoginGoogle\LoginGoogleController@redirectToGoogle')->name('RedirectToGoogle'); 
+    Route::get('/google/callback','App\Http\Controllers\Admin\v1\LoginGoogle\LoginGoogleController@handdleGoogleCallBack')->name('handdleGoogleCallBack'); 
+
 
 Route::prefix('/ajax')->group(function(){
         Route::post('/register-action','App\Http\Controllers\Admin\v1\Ajax\UserRegisterController@indexAction')->name('RegisterAction');

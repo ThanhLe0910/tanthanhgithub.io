@@ -16,6 +16,7 @@
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Company</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -27,12 +28,51 @@
                             <td>{{$item->phone}}</td>
                             <td>{{$item->company}}</td>
                             <td class="text-center">
+                            @if($item->status === '1' && $item->email !== Auth::user()->email)
+                            <!-- GLOABAL LOADER -->
+                            <div id="global-loader" style="display:none">
+                                <img src="/image/loader.svg" class="loader-img" alt="Loader">
+                            </div>
+                            <!-- /GLOABAL LOADER -->
+                            <a href="" onclick="UpdateStatus('0',{{$item->id}});" ><span uk-icon="check"></span></a>
+                            @endif
+
+                            @if($item->status === '0' && $item->email !== Auth::user()->email)
+                            <!-- GLOABAL LOADER -->
+                            <div id="global-loader" style="display:none">
+                                <img src="/image/loader.svg" class="loader-img" alt="Loader">
+                            </div>
+                            <!-- /GLOABAL LOADER -->
+                            <a href="" onclick="UpdateStatus('1',{{$item->id}});"><span uk-icon="close"></span></a>
+                            @endif
+                            
+                            @if($item->status === '0' && $item->email === Auth::user()->email)
+                            <!-- GLOABAL LOADER -->
+                            <div id="global-loader" style="display:none">
+                                <img src="/image/loader.svg" class="loader-img" alt="Loader">
+                            </div>
+                            <!-- /GLOABAL LOADER -->
+                            <span uk-icon="close"></span>
+                            @endif
+                            @if($item->status === '1' && $item->email === Auth::user()->email)
+                            <!-- GLOABAL LOADER -->
+                            <div id="global-loader" style="display:none">
+                                <img src="/image/loader.svg" class="loader-img" alt="Loader">
+                            </div>
+                            <!-- /GLOABAL LOADER -->
+                            <span uk-icon="check"></span>
+                            @endif
+
+                            </td>
+                            <td class="text-center w-25">
                                 <a href="{{asset('admin/form-update-user/'.$item->id)}}" type="button" class="btn btn-success" href="">Edit</a>
 
                                 <a href="" onclick="return confirm('Bạn có muốn xóa không ?')" type="button"
                                     class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
+                        
+                        
                         @endforeach()
                     </tbody>
                 </table>
